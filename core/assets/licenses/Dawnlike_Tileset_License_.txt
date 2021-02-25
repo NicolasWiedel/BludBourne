@@ -1,7 +1,3 @@
-# bludbourne
-after the book "Mastering LibGDX Game Development
-
-Used assets:
 
 DAWNLIKE
 16x16 Universal Rogue-like tileset v1.8
