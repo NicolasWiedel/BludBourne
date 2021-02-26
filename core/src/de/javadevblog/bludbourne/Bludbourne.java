@@ -2,9 +2,11 @@ package de.javadevblog.bludbourne;
 
 import com.badlogic.gdx.Game;
 
+import de.javadevblog.bludbourne.screens.MainGameScreen;
+
 public class Bludbourne extends Game{
 	
-	public static final MainGameSceen mainGameScreen = new MainGameScreen();
+	public static final MainGameScreen mainGameScreen = new MainGameScreen();
 
 	@Override
 	public void create() {
