@@ -12,6 +12,8 @@ import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Rectangle;
 
+import de.javadevblog.bludbourne.MapManager;
+
 public class MainGameScreen implements Screen{
 	public static final String TAG = MainGameScreen.class.getSimpleName();
 	
