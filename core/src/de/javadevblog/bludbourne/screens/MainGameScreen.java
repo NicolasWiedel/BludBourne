@@ -42,7 +42,7 @@ public class MainGameScreen implements Screen{
 		mapRenderer = new OrthogonalTiledMapRenderer(mapMgr.getCurrentMap(), MapManager.UNIT_SCALE);
 		mapRenderer.setView(camera);
 		
-		player = new ntity();
+		player = new Entity();
 		player.init(mapMgr.getPlayerStartUnitScaled().x, mapMgr.getPlayerStartUnitScaled().y);
 		
 		currentPlayerSprite = player.getFrameSprite();
@@ -110,7 +110,7 @@ public class MainGameScreen implements Screen{
 		mapRenderer.dispose();
 	}
 	
-	private void setViewport(int width, int height) {
+	private void setupViewport(int width, int height) {
 //		Einstellung des Vieports auf einen Anteil am gesamten Bildschirm
 		VIEWPORT.virtualWidth = width;
 		VIEWPORT.virtualHeight = height;
