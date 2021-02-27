@@ -14,6 +14,7 @@ import com.badlogic.gdx.math.Rectangle;
 
 import de.javadevblog.bludbourne.Entity;
 import de.javadevblog.bludbourne.MapManager;
+import de.javadevblog.bludbourne.PlayerController;
 
 public class MainGameScreen implements Screen{
 	public static final String TAG = MainGameScreen.class.getSimpleName();
