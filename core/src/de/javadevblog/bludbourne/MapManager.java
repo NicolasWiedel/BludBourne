@@ -124,7 +124,7 @@ public class MapManager {
 		return portalLayer;
 	}
 	
-	public Vector2 getPlayerStartUnitScale() {
+	public Vector2 getPlayerStartUnitScaled() {
 		Vector2 playerStart = this.playerStart.cpy();
 		playerStart.set(this.playerStart.x * UNIT_SCALE, this.playerStart.y * UNIT_SCALE);
 		return playerStart;

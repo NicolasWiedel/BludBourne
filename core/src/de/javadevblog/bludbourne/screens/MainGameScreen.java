@@ -12,6 +12,7 @@ import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Rectangle;
 
+import de.javadevblog.bludbourne.Entity;
 import de.javadevblog.bludbourne.MapManager;
 
 public class MainGameScreen implements Screen{
@@ -180,7 +181,7 @@ public class MainGameScreen implements Screen{
 					}
 					mapMgr.setClosestStartPositionFromScaleUnits(player.getCurrentPosition());
 					mapMgr.loadMap(mapName);
-					player.init(mapMgr.getPlayerStartUnitScale().x, mapMgr.setPlayerStartUnitScale().y);
+					player.init(mapMgr.getPlayerStartUnitScaled().x, mapMgr.getPlayerStartUnitScaled().y);
 					mapRenderer.setMap(mapMgr.getCurrentMap());
 					Gdx.app.debug(TAG, "Portal aktiviert!");
 					return true;
