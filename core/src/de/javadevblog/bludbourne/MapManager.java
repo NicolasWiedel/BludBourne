@@ -1,10 +1,11 @@
 package de.javadevblog.bludbourne;
 
-import java.util.HashMap;
 import java.util.Hashtable;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.maps.MapLayer;
+import com.badlogic.gdx.maps.MapObject;
+import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.math.Vector2;
 
@@ -127,5 +128,33 @@ public class MapManager {
 		Vector2 playerStart = this.playerStart.cpy();
 		playerStart.set(this.playerStart.x * UNIT_SCALE, this.playerStart.y * UNIT_SCALE);
 		return playerStart;
+	}
+	
+	private void setClosestStartPosition(final Vector2 position) {
+		playerStartPositionRect.set(0, 0);
+		closestPlayerStartPosition.set(0, 0);
+		float shortestDistance = 0f;
+		
+		for(MapObject object : spawnsLayer.getObjects()) {
+			if(object.getName().equalsIgnoreCase(PLAYER_START)) {
+				((RectangleMapObject)object).getRectangle().getPosition(playerStartPositionRect);
+				float distance = position.dst2(playerStartPositionRect);
+				
+				if(distance < shortestDistance || shortestDistance == 0) {
+					closestPlayerStartPosition.set(playerStartPositionRect);
+					shortestDistance = distance;
+				}
+			}
+		}
+		playerStartLocationTable.put(currentMapName, closestPlayerStartPosition.cpy());
+	}
+	
+	public void setClosestStartPositionFromScaleUnits(Vector2 position) {
+		if(UNIT_SCALE <= 0) {
+			return;
+		}
+		
+		convertedUnits.set(position.x / UNIT_SCALE, position.y / UNIT_SCALE);
+		setClosestStartPosition(convertedUnits);
 	}
 }
