@@ -49,7 +49,7 @@ public class MainGameScreen implements Screen{
 		
 		currentPlayerSprite = player.getFrameSprite();
 		
-		controller = new PlayerCorntroller(player);
+		controller = new PlayerController(player);
 		Gdx.input.setInputProcessor(controller);
 	}
 	

@@ -115,7 +115,7 @@ public class Entity {
 	}
 	
 	public void loadAllAnimations() {
-		Texture texture =Utility.getTextureAsset(DEFAULT_SPRITE_PATH);
+		Texture texture = Utility.getTextureAsset(DEFAULT_SPRITE_PATH);
 		TextureRegion[][] textureFrames = TextureRegion.split(texture, FRAME_WIDTH, FRAME_HEIGHT);
 		walkDownFrames = new Array<TextureRegion>(4);
 		walkLeftFrames = new Array<TextureRegion>(4);

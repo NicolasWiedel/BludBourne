@@ -89,7 +89,7 @@ public class Utility {
 			ASSET_MANAGER.finishLoadingAsset(textureFilePath);
 		}
 		else {
-			Gdx.app.debug(TAG, "Die Texture existiertnicht: " + textureFilePath);
+			Gdx.app.debug(TAG, "Die Texture existiert nicht: " + textureFilePath);
 		}
 	}
 	
@@ -97,7 +97,7 @@ public class Utility {
 		Texture texture = null;
 		
 		if(ASSET_MANAGER.isLoaded(textureFileNamePath, Texture.class)) {
-			ASSET_MANAGER.get(textureFileNamePath, Texture.class);
+			texture = ASSET_MANAGER.get(textureFileNamePath, Texture.class);
 		}
 		else {
 			Gdx.app.debug(TAG, "Die Texture wurde nicht geladen: " + textureFileNamePath);
