@@ -7,12 +7,80 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
+import com.badlogic.gdx.utils.Json;
 
 public class Entity {
 	private static final String TAG = Entity.class.getSimpleName();
+	
+	private Json json;
+	private EntityConfig entityConfig;
+	
+	public enum Direction {
+		UP,
+		RIGHT,
+		DOWN, 
+		LEFT;
+		
+		public static Direction getRandomNext() {
+			return Direction.values()[MathUtils.random(Direction.values().length-1)];
+		}
+		
+		public Direction getOposite() {
+			if (this == LEFT) {
+				return RIGHT;
+			}
+			else if (this == RIGHT) {
+				return LEFT;
+			}
+			else if (this == UP) {
+				return DOWN;
+			}
+			else return UP;
+		}
+	}
+	
+	public enum State {
+		IDLE, 
+		WALKING,
+		
+		IMMOBILE; // Sollte immer das letzte sein
+		
+		public static State getRandomNext() {
+			// Immobile ignorieren
+			return State.values()[MathUtils.random(State.values().length - 2)];
+		}
+	}
+	
+	public static enum AnimationType {
+		WALK_LEFT,
+		WALK_RIGHT,
+		WALK_UP,
+		WALK_DOWN,
+		IDLE,
+		IMMOBILE;
+	}
+	
+	public final int FRAME_WIDTH = 16;
+	public final int FRAME_HEIGHT = 16;
+	
+	private static final int MAX_COMPONENTS = 5;
+	private Array<Component> components;
+	
+	private InputComponent inputComponent;
+	private GraphicsComponent graphicsCmponent;
+	private PhysicsComponent physicsComponent;
+	
+	
+	
+	
+	
+	
+	
+	
 	private static final String DEFAULT_SPRITE_PATH = "sprites/characters/Warrior.png";
 
 	private Vector2 velocity;
@@ -38,8 +106,7 @@ public class Entity {
 	protected Sprite frameSprite = null;
 	protected TextureRegion currentFrame = null;
 
-	public final int FRAME_WIDTH = 16;
-	public final int FRAME_HEIGHT = 16;
+	
 	public static Rectangle boundingBox;
 
 	public Entity() {
@@ -232,11 +299,7 @@ public class Entity {
 		velocity.scl(1 / deltaTime);
 	}
 
-	public enum State {
-		IDLE, WALKING;
-	}
+	
 
-	public enum Direction {
-		UP, RIGHT, DOWN, LEFT;
-	}
+	
 }
