@@ -67,8 +67,8 @@ public class Entity {
 		IMMOBILE;
 	}
 	
-	public final int FRAME_WIDTH = 16;
-	public final int FRAME_HEIGHT = 16;
+	public static final int FRAME_WIDTH = 16;
+	public static final int FRAME_HEIGHT = 16;
 	
 	private static final int MAX_COMPONENTS = 5;
 	private Array<Component> components;
