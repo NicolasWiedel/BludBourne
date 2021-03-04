@@ -20,5 +20,5 @@ public interface Component {
 	}
 	
 	void dispose();
-	void reseiveMessage(String message);
+	void receiveMessage(String message);
 }

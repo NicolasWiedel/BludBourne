@@ -77,39 +77,6 @@ public class Entity {
 	private GraphicsComponent graphicsComponent;
 	private PhysicsComponent physicsComponent;
 	
-	
-	
-//	private static final String DEFAULT_SPRITE_PATH = "sprites/characters/Warrior.png";
-//
-//	private Vector2 velocity;
-//	private String entityID;
-//
-//	private Direction currentDirection = Direction.LEFT;
-//	private Direction previousDirection = Direction.UP;
-//
-//	private Animation<TextureRegion> walkLeftAnimation;
-//	private Animation<TextureRegion> walkRightAnimation;
-//	private Animation<TextureRegion> walkUpAnimation;
-//	private Animation<TextureRegion> walkDownAnimation;
-//
-//	private Array<TextureRegion> walkLeftFrames;
-//	private Array<TextureRegion> walkRightFrames;
-//	private Array<TextureRegion> walkUpFrames;
-//	private Array<TextureRegion> walkDownFrames;
-//
-//	protected Vector2 nextPlayerPosition;
-//	protected Vector2 currentPlayerPosition;
-//	protected State state = State.IDLE;
-//	protected float frameTime = 0f;
-//	protected Sprite frameSprite = null;
-//	protected TextureRegion currentFrame = null;
-//
-//	
-//	public static Rectangle boundingBox;
-
-	
-	
-	
 	public Entity(
 			InputComponent inputComponent,
 			PhysicsComponent physicsComponent,
@@ -155,7 +122,7 @@ public class Entity {
 	}
 	
 	public Rectangle getCurrentBoundingBox() {
-		return physicsComponent.boundingbox;
+		return physicsComponent.boundingBox;
 	}
 	
 	public void setEntityConfig(EntityConfig entityConfig) {
