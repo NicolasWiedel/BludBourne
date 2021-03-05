@@ -107,7 +107,7 @@ public abstract class GraphicsComponent implements Component {
     }
 
     //Specific to two frame animations where each frame is stored in a separate texture
-    protected Animation loadAnimation(String firstTexture, String secondTexture, Array<GridPoint2> points, float frameDuration){
+    protected Animation<TextureRegion> loadAnimation(String firstTexture, String secondTexture, Array<GridPoint2> points, float frameDuration){
         Utility.loadTextureAsset(firstTexture);
         Texture texture1 = Utility.getTextureAsset(firstTexture);
 
@@ -124,10 +124,10 @@ public abstract class GraphicsComponent implements Component {
         animationKeyFrames.add(texture1Frames[point.x][point.y]);
         animationKeyFrames.add(texture2Frames[point.x][point.y]);
 
-        return new Animation(frameDuration, animationKeyFrames, Animation.PlayMode.LOOP);
+        return new Animation<TextureRegion>(frameDuration, animationKeyFrames, Animation.PlayMode.LOOP);
     }
 
-    protected Animation loadAnimation(String textureName, Array<GridPoint2> points, float frameDuration){
+    protected Animation<TextureRegion> loadAnimation(String textureName, Array<GridPoint2> points, float frameDuration){
         Utility.loadTextureAsset(textureName);
         Texture texture = Utility.getTextureAsset(textureName);
 
@@ -139,6 +139,6 @@ public abstract class GraphicsComponent implements Component {
             animationKeyFrames.add(textureFrames[point.x][point.y]);
         }
 
-        return new Animation(frameDuration, animationKeyFrames, Animation.PlayMode.LOOP);
+        return new Animation<TextureRegion>(frameDuration, animationKeyFrames, Animation.PlayMode.LOOP);
     }
 }
