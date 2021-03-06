@@ -46,7 +46,7 @@ public class Utility {
 		return ASSET_MANAGER.isLoaded(fileName);
 	}
 
-	public static void LoadMapAsset(String mapFilenamPath) {
+	public static void loadMapAsset(String mapFilenamPath) {
 		if (mapFilenamPath == null || mapFilenamPath.isEmpty()) {
 			return;
 		}

@@ -1,5 +1,6 @@
 package de.javadevblog.bludbourne;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.maps.MapLayer;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.objects.RectangleMapObject;
@@ -210,7 +211,7 @@ public abstract class PhysicsComponent implements Component {
 
         switch(boundingBoxLocation){
             case BOTTOM_LEFT:
-                boundingBox.set(minX, minY, _boundingBox.getWidth(), _boundingBox.getHeight());
+                boundingBox.set(minX, minY, boundingBox.getWidth(), boundingBox.getHeight());
                 break;
             case BOTTOM_CENTER:
                 boundingBox.setCenter(minX + Entity.FRAME_WIDTH/2, minY + Entity.FRAME_HEIGHT/4);
