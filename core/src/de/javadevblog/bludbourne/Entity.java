@@ -90,6 +90,10 @@ public class Entity {
 		this.inputComponent = inputComponent;
 		this.physicsComponent = physicsComponent;
 		this.graphicsComponent = graphicsComponent;
+		
+		components.add(inputComponent);
+		components.add(physicsComponent);
+		components.add(graphicsComponent);
 	}
 	
 	public EntityConfig getEntityConfig() {
@@ -99,6 +103,8 @@ public class Entity {
 	public void sendMessage(Component.MESSAGE messageType, String ... args) {
 		
 		String fullMessage = messageType.toString();
+
+		Gdx.app.debug(TAG, fullMessage);
 		
 		for(String string : args) {
 			fullMessage += Component.MESSAGE_TOKEN + string;

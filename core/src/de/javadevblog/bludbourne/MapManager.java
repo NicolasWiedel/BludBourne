@@ -1,13 +1,9 @@
 package de.javadevblog.bludbourne;
 
-import java.util.Hashtable;
-
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.g2d.Batch;
 import com.badlogic.gdx.maps.MapLayer;
-import com.badlogic.gdx.maps.MapObject;
-import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.Array;
@@ -53,7 +49,7 @@ public class MapManager {
 
     public TiledMap getCurrentTiledMap(){
         if( currentMap == null ) {
-            loadMap(MapFactory.MapType.TOWN);
+            loadMap(MapFactory.MapType.TOP_WORLD);
         }
         return currentMap.getCurrentTiledMap();
     }

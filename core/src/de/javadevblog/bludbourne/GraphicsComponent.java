@@ -2,6 +2,7 @@ package de.javadevblog.bludbourne;
 
 import java.util.Hashtable;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Batch;
@@ -37,6 +38,8 @@ public abstract class GraphicsComponent implements Component {
     public abstract void update(Entity entity, MapManager mapManager, Batch batch, float delta);
 
     protected void updateAnimations(float delta){
+    	Gdx.app.debug(TAG, "" + currentFrame + " " + currentDirection + " " + currentState);
+    	
         frameTime = (frameTime + delta)%5; //Want to avoid overflow
 
         //Look into the appropriate variable when changing position
@@ -44,6 +47,7 @@ public abstract class GraphicsComponent implements Component {
             case DOWN:
                 if (currentState == Entity.State.WALKING) {
                     Animation<TextureRegion> animation = animations.get(Entity.AnimationType.WALK_DOWN);
+                    Gdx.app.debug(TAG, "Animation " + animation);
                     if( animation == null ) return;
                     currentFrame = animation.getKeyFrame(frameTime);
                 } else if(currentState == Entity.State.IDLE) {
@@ -55,6 +59,7 @@ public abstract class GraphicsComponent implements Component {
                     if( animation == null ) return;
                     currentFrame = animation.getKeyFrame(frameTime);
                 }
+                Gdx.app.debug(TAG, "DOWN" + currentFrame);
                 break;
             case LEFT:
                 if (currentState == Entity.State.WALKING) {
@@ -70,6 +75,7 @@ public abstract class GraphicsComponent implements Component {
                     if( animation == null ) return;
                     currentFrame = animation.getKeyFrame(frameTime);
                 }
+                Gdx.app.debug(TAG, "LEFT" + currentFrame);
                 break;
             case UP:
                 if (currentState == Entity.State.WALKING) {
@@ -85,6 +91,7 @@ public abstract class GraphicsComponent implements Component {
                     if( animation == null ) return;
                     currentFrame = animation.getKeyFrame(frameTime);
                 }
+                Gdx.app.debug(TAG, "UP" + currentFrame);
                 break;
             case RIGHT:
                 if (currentState == Entity.State.WALKING) {
@@ -100,8 +107,10 @@ public abstract class GraphicsComponent implements Component {
                     if( animation == null ) return;
                     currentFrame = animation.getKeyFrame(frameTime);
                 }
+                Gdx.app.debug(TAG, "RIGHT" + currentFrame);
                 break;
             default:
+            	Gdx.app.debug(TAG, "DEFAULT" + currentFrame);
                 break;
         }
     }

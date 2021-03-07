@@ -1,5 +1,6 @@
 package de.javadevblog.bludbourne;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Camera;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.Batch;
@@ -15,11 +16,12 @@ public class PlayerGraphicsComponent extends GraphicsComponent {
 	private static final String TAG = PlayerGraphicsComponent.class.getSimpleName();
 
     public PlayerGraphicsComponent(){
+    	Gdx.app.debug(TAG, "Construktor");
     }
     
     @Override
     public void receiveMessage(String message) {
-        //Gdx.app.debug(TAG, "Got message " + message);
+        Gdx.app.debug(TAG, "Got message " + message);
         String[] string = message.split(MESSAGE_TOKEN);
 
         if( string.length == 0 ) return;
