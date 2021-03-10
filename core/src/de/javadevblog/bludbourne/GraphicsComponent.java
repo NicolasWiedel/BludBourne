@@ -38,7 +38,6 @@ public abstract class GraphicsComponent implements Component {
     public abstract void update(Entity entity, MapManager mapManager, Batch batch, float delta);
 
     protected void updateAnimations(float delta){
-    	Gdx.app.debug(TAG, "" + currentFrame + " " + currentDirection + " " + currentState);
     	
         frameTime = (frameTime + delta)%5; //Want to avoid overflow
 
@@ -46,66 +45,65 @@ public abstract class GraphicsComponent implements Component {
         switch (currentDirection) {
             case DOWN:
                 if (currentState == Entity.State.WALKING) {
-                    Animation<TextureRegion> animation = animations.get(Entity.AnimationType.WALK_DOWN);
-                    Gdx.app.debug(TAG, "Animation " + animation);
+                    Animation animation = animations.get(Entity.AnimationType.WALK_DOWN);
                     if( animation == null ) return;
-                    currentFrame = animation.getKeyFrame(frameTime);
+                    currentFrame = (TextureRegion) animation.getKeyFrame(frameTime);
                 } else if(currentState == Entity.State.IDLE) {
-                    Animation<TextureRegion> animation = animations.get(Entity.AnimationType.WALK_DOWN);
+                    Animation animation = animations.get(Entity.AnimationType.WALK_DOWN);
                     if( animation == null ) return;
-                    currentFrame = animation.getKeyFrames()[0];
+                    currentFrame = (TextureRegion) animation.getKeyFrames()[0];
                 } else if(currentState == Entity.State.IMMOBILE) {
-                    Animation<TextureRegion> animation = animations.get(Entity.AnimationType.IMMOBILE);
+                    Animation animation = animations.get(Entity.AnimationType.IMMOBILE);
                     if( animation == null ) return;
-                    currentFrame = animation.getKeyFrame(frameTime);
+                    currentFrame = (TextureRegion) animation.getKeyFrame(frameTime);
                 }
                 Gdx.app.debug(TAG, "DOWN" + currentFrame);
                 break;
             case LEFT:
                 if (currentState == Entity.State.WALKING) {
-                    Animation<TextureRegion> animation = animations.get(Entity.AnimationType.WALK_LEFT);
+                    Animation animation = animations.get(Entity.AnimationType.WALK_LEFT);
                     if( animation == null ) return;
-                    currentFrame = animation.getKeyFrame(frameTime);
+                    currentFrame = (TextureRegion) animation.getKeyFrame(frameTime);
                 } else if(currentState == Entity.State.IDLE) {
-                    Animation<TextureRegion> animation = animations.get(Entity.AnimationType.WALK_LEFT);
+                    Animation animation = animations.get(Entity.AnimationType.WALK_LEFT);
                     if( animation == null ) return;
-                    currentFrame = animation.getKeyFrames()[0];
+                    currentFrame = (TextureRegion) animation.getKeyFrames()[0];
                 } else if(currentState == Entity.State.IMMOBILE) {
-                    Animation<TextureRegion> animation = animations.get(Entity.AnimationType.IMMOBILE);
+                    Animation animation = animations.get(Entity.AnimationType.IMMOBILE);
                     if( animation == null ) return;
-                    currentFrame = animation.getKeyFrame(frameTime);
+                    currentFrame = (TextureRegion) animation.getKeyFrame(frameTime);
                 }
                 Gdx.app.debug(TAG, "LEFT" + currentFrame);
                 break;
             case UP:
                 if (currentState == Entity.State.WALKING) {
-                    Animation<TextureRegion> animation = animations.get(Entity.AnimationType.WALK_UP);
+                    Animation animation = animations.get(Entity.AnimationType.WALK_UP);
                     if( animation == null ) return;
-                    currentFrame = animation.getKeyFrame(frameTime);
+                    currentFrame = (TextureRegion) animation.getKeyFrame(frameTime);
                 } else if(currentState == Entity.State.IDLE) {
-                    Animation<TextureRegion> animation = animations.get(Entity.AnimationType.WALK_UP);
+                    Animation animation = animations.get(Entity.AnimationType.WALK_UP);
                     if( animation == null ) return;
-                    currentFrame = animation.getKeyFrames()[0];
+                    currentFrame = (TextureRegion) animation.getKeyFrames()[0];
                 } else if(currentState == Entity.State.IMMOBILE) {
-                    Animation<TextureRegion> animation = animations.get(Entity.AnimationType.IMMOBILE);
+                    Animation animation = animations.get(Entity.AnimationType.IMMOBILE);
                     if( animation == null ) return;
-                    currentFrame = animation.getKeyFrame(frameTime);
+                    currentFrame = (TextureRegion) animation.getKeyFrame(frameTime);
                 }
                 Gdx.app.debug(TAG, "UP" + currentFrame);
                 break;
             case RIGHT:
                 if (currentState == Entity.State.WALKING) {
-                    Animation<TextureRegion> animation = animations.get(Entity.AnimationType.WALK_RIGHT);
+                    Animation animation = animations.get(Entity.AnimationType.WALK_RIGHT);
                     if( animation == null ) return;
-                    currentFrame = animation.getKeyFrame(frameTime);
+                    currentFrame = (TextureRegion) animation.getKeyFrame(frameTime);
                 } else if(currentState == Entity.State.IDLE) {
-                    Animation<TextureRegion> animation = animations.get(Entity.AnimationType.WALK_RIGHT);
+                    Animation animation = animations.get(Entity.AnimationType.WALK_RIGHT);
                     if( animation == null ) return;
-                    currentFrame = animation.getKeyFrames()[0];
+                    currentFrame = (TextureRegion) animation.getKeyFrames()[0];
                 } else if(currentState == Entity.State.IMMOBILE) {
-                    Animation<TextureRegion> animation = animations.get(Entity.AnimationType.IMMOBILE);
+                    Animation animation = animations.get(Entity.AnimationType.IMMOBILE);
                     if( animation == null ) return;
-                    currentFrame = animation.getKeyFrame(frameTime);
+                    currentFrame = (TextureRegion) animation.getKeyFrame(frameTime);
                 }
                 Gdx.app.debug(TAG, "RIGHT" + currentFrame);
                 break;

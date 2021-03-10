@@ -103,8 +103,6 @@ public class Entity {
 	public void sendMessage(Component.MESSAGE messageType, String ... args) {
 		
 		String fullMessage = messageType.toString();
-
-		Gdx.app.debug(TAG, fullMessage);
 		
 		for(String string : args) {
 			fullMessage += Component.MESSAGE_TOKEN + string;

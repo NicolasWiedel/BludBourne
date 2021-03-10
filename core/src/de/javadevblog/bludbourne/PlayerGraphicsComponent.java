@@ -21,7 +21,6 @@ public class PlayerGraphicsComponent extends GraphicsComponent {
     
     @Override
     public void receiveMessage(String message) {
-        Gdx.app.debug(TAG, "Got message " + message);
         String[] string = message.split(MESSAGE_TOKEN);
 
         if( string.length == 0 ) return;

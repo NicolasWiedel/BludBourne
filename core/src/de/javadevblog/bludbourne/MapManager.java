@@ -49,7 +49,7 @@ public class MapManager {
 
     public TiledMap getCurrentTiledMap(){
         if( currentMap == null ) {
-            loadMap(MapFactory.MapType.TOP_WORLD);
+            loadMap(MapFactory.MapType.TOWN);
         }
         return currentMap.getCurrentTiledMap();
     }
