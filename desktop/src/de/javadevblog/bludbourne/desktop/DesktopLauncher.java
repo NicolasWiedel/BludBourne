@@ -10,6 +10,7 @@ public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
 		
+		// config for BludBourne
 		config.title = "BludBourne";
 		config.useGL30 = false;
 		config.width = 800;
