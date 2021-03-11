@@ -57,7 +57,6 @@ public abstract class GraphicsComponent implements Component {
                     if( animation == null ) return;
                     currentFrame = (TextureRegion) animation.getKeyFrame(frameTime);
                 }
-                Gdx.app.debug(TAG, "DOWN" + currentFrame);
                 break;
             case LEFT:
                 if (currentState == Entity.State.WALKING) {
@@ -73,7 +72,6 @@ public abstract class GraphicsComponent implements Component {
                     if( animation == null ) return;
                     currentFrame = (TextureRegion) animation.getKeyFrame(frameTime);
                 }
-                Gdx.app.debug(TAG, "LEFT" + currentFrame);
                 break;
             case UP:
                 if (currentState == Entity.State.WALKING) {
@@ -89,7 +87,6 @@ public abstract class GraphicsComponent implements Component {
                     if( animation == null ) return;
                     currentFrame = (TextureRegion) animation.getKeyFrame(frameTime);
                 }
-                Gdx.app.debug(TAG, "UP" + currentFrame);
                 break;
             case RIGHT:
                 if (currentState == Entity.State.WALKING) {
@@ -105,10 +102,8 @@ public abstract class GraphicsComponent implements Component {
                     if( animation == null ) return;
                     currentFrame = (TextureRegion) animation.getKeyFrame(frameTime);
                 }
-                Gdx.app.debug(TAG, "RIGHT" + currentFrame);
                 break;
             default:
-            	Gdx.app.debug(TAG, "DEFAULT" + currentFrame);
                 break;
         }
     }
